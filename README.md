@@ -1,15 +1,6 @@
 # -Student-Grade-Calculator
 
- import java.util.Scanner;
-
-/**
- * DecodeLabs - Java Programming Industrial Training Kit
- * Project 2: Student Grade Calculator
- *
- * Takes marks (out of 100) for multiple subjects, calculates total marks,
- * average percentage, and assigns a grade — following the IPO
- * (Input -> Process -> Output) architecture described in the training kit.
- */
+import java.util.Scanner;
 public class StudentGradeCalculator {
 
     public static void main(String[] args) {
@@ -40,11 +31,7 @@ public class StudentGradeCalculator {
         sc.close();
     }
 
-    /**
-     * Reads and validates the number of subjects (must be a positive integer).
-     * Uses Integer.parseInt(sc.nextLine()) — Solution B from the training kit —
-     * to avoid the classic Scanner buffer trap entirely.
-     */
+    
     private static int readValidSubjectCount(Scanner sc) {
         int count = -1;
         while (count <= 0) {
@@ -62,11 +49,7 @@ public class StudentGradeCalculator {
         return count;
     }
 
-    /**
-     * Reads and validates a single subject's marks.
-     * Defensive Programming: rejects marks > 100 or marks < 0 and re-prompts,
-     * exactly as specified under "Handling Edge Cases".
-     */
+    
     private static int readValidMark(Scanner sc, int subjectNumber) {
         int mark = -1;
         boolean valid = false;
@@ -88,10 +71,7 @@ public class StudentGradeCalculator {
         return mark;
     }
 
-    /**
-     * Gear 3: The Logic Ladder.
-     * Order matters — the strictest condition (the top bucket) is checked first.
-     */
+    
     private static char calculateGrade(double percentage) {
         if (percentage >= 90) {
             return 'A';
@@ -106,10 +86,7 @@ public class StudentGradeCalculator {
         }
     }
 
-    /**
-     * Phase III: Output — uses printf with format specifiers for a clean,
-     * professional report instead of a raw println of a long decimal.
-     */
+    
     private static void printReport(int numberOfSubjects, int totalMarks,
                                      double averagePercentage, char grade) {
         System.out.println();
